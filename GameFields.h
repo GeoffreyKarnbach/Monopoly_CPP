@@ -35,21 +35,38 @@ private:
         GREEN,
         DARK_BLUE
     };
+    string Colors[9] = {"NO_COLOR",
+                       "BROWN",
+                       "LIGHT_BLUE",
+                       "PINK",
+                       "ORANGE",
+                       "RED",
+                       "YELLOW",
+                       "GREEN",
+                       "DARK_BLUE"};
 
-    bool isStart;
-    bool isJail;
-    bool isParking;
-    bool isPolice;
+    string Stations[5] = {
+            "NONE",
+            "READING_RAILROAD",
+            "PENNSYLVANIA_RAILROAD",
+            "B_O_RAILROAD",
+            "SHORT_LINE"
+    };
 
-    bool isLuck;
-    bool isCommunity;
+    bool isStart = false;
+    bool isJail = false;
+    bool isParking= false;
+    bool isPolice= false;
 
-    bool isElectric;
-    bool isWater;
+    bool isLuck= false;
+    bool isCommunity= false;
 
-    bool isLuxuryTax;
-    bool isIncomeTax;
-    bool isTrainStation;
+    bool isElectric= false;
+    bool isWater= false;
+
+    bool isLuxuryTax= false;
+    bool isIncomeTax= false;
+    bool isTrainStation= false;
 
     TrainStations train_name;
     string name;
@@ -57,14 +74,29 @@ private:
     int price;
     Player owner;
 
+    string boolToString(bool value);
+
 public:
-    GameFields(int price, string name);
+    /*
+     * Default Constructor
+     */
+    GameFields();
+
+    /*
+     * Constructor using data from csv file to load data (specific field index 0->39);
+     */
+    GameFields(int index);
 
     /*
      * Returns a string containing a readable form of the given GameField
      *
      */
     string toString();
+
+    /*
+     * Returns a complex representation of the given Gamefield as a String
+     */
+    string complexToString();
 
     /*
      * Handler to interact with the field

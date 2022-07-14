@@ -5,7 +5,9 @@
 
 using namespace std;
 
-void playerTest()
+const bool DEBUG = true;
+
+void playerTurnTest()
 {
     srand(2022); //Start Random Engine
 
@@ -57,8 +59,16 @@ int main()
 
     GameBoard playBoard;
     playBoard.generate();
-    playBoard.outputBoard();
+
+    if (DEBUG)
+    {
+        playBoard.outputComplexBoard();
+    }
+    else
+    {
+        playBoard.outputBoard();
+    }
+
 
     return 0;
 }
-

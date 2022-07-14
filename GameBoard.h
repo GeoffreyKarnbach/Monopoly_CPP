@@ -35,7 +35,7 @@ public:
     /*
      * Jump X fields and returns the current field
      */
-    GameFields getAfter(int number);
+    GameFields getAfter(int startIndex, int steps);
 
     /*
      * Add new Gamefield to Gameboard
@@ -51,6 +51,11 @@ public:
      * Method to output current state of Gameboard
      */
     void outputBoard();
+
+    /*
+     * Method to output current state of Gameboard with all attributes
+     */
+    void outputComplexBoard();
 
 
 

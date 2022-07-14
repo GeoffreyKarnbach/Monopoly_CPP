@@ -3,7 +3,7 @@ isStart,isJail,isParking,isPolice,isLuck,isCommunity,isElectric,isWater,isLuxury
 0,0,0,0,0,0,0,0,0,0,0,0,Mediteranean Avenue,1,60
 0,0,0,0,0,1,0,0,0,0,0,0,Community Chest,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,Baltic Avenue,1,60
-0,0,0,0,0,0,0,0,0,1,0,0,Income Tax,0,200
+0,0,0,0,0,0,0,0,0,1,0,0,Income Tax,0,-200
 0,0,0,0,0,0,0,0,0,0,1,1,Reading Railroad,0,200
 0,0,0,0,0,0,0,0,0,0,0,0,Oriental Avenue,2,100
 0,0,0,0,1,0,0,0,0,0,0,0,Chance,0,0
@@ -37,5 +37,5 @@ isStart,isJail,isParking,isPolice,isLuck,isCommunity,isElectric,isWater,isLuxury
 0,0,0,0,0,0,0,0,0,0,1,4,Short Line,0,200
 0,0,0,0,1,0,0,0,0,0,0,0,Chance,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,Park Palace,8,350
-0,0,0,0,0,0,0,0,1,0,0,0,Luxury Tax,0,100
+0,0,0,0,0,0,0,0,1,0,0,0,Luxury Tax,0,-100
 0,0,0,0,0,0,0,0,0,0,0,0,Boardwalk,8,400
