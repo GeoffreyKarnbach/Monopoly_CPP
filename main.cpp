@@ -10,10 +10,10 @@ int main()
 {
     srand(2022); //Start Random Engine
 
-    Player player1(1000, "Jeff");
-    Player player2(1000, "Val");
-    Player player3(1000,"Papa");
-    Player player4(1000, "Mama");
+    Player player1(1000, "Player1");
+    Player player2(1000, "Player2");
+    Player player3(1000,"Player3");
+    Player player4(1000, "Player4");
 
     RingList players(player1);
     players.addPlayer(player2);
