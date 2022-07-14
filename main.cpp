@@ -1,12 +1,11 @@
 #include <iostream>
-#include "BankHandler.h"
 #include "GameBoard.h"
 #include "Player.h"
 #include "RingList.h"
 
 using namespace std;
 
-int main()
+void playerTest()
 {
     srand(2022); //Start Random Engine
 
@@ -42,5 +41,24 @@ int main()
 
         currentTurn++;
     }
+}
+
+int main()
+{
+    Player player1(1000, "Player1");
+    Player player2(1000, "Player2");
+    Player player3(1000,"Player3");
+    Player player4(1000, "Player4");
+
+    RingList players(player1);
+    players.addPlayer(player2);
+    players.addPlayer(player3);
+    players.addPlayer(player4);
+
+    GameBoard playBoard;
+    playBoard.generate();
+
+    playerTest();
     return 0;
 }
+

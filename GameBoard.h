@@ -8,6 +8,7 @@
 #include "GameFields.h"
 #include <string>
 #include <math.h>
+#include <vector>
 
 /*
  * Implement GameBoard as Ringlist with methode to "jump" given amount of squares
@@ -16,6 +17,37 @@
  */
 
 class GameBoard {
+private:
+    int index = 0;
+    vector<GameFields> board;
+
+public:
+    /*
+     * Basic Constructor
+     */
+    GameBoard();
+
+    /*
+     * Generate the game board, by adding all the Fields
+     */
+    void generate();
+
+    /*
+     * Jump X fields and returns the current field
+     */
+    GameFields getAfter(int number);
+
+    /*
+     * Add new Gamefield to Gameboard
+     */
+    bool addField(GameFields toAdd);
+
+    /*
+     * Get number of fields
+     */
+    int getFieldNumber();
+
+
 
 };
 

@@ -1,0 +1,41 @@
+isStart,isJail,isParking,isPolice,isLuck,isCommunity,isElectric,isWater,isLuxuryTax,isIncomeTax,isTrainStation,stationID,name,colorID,price
+1,0,0,0,0,0,0,0,0,0,0,0,Start,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Mediteranean Avenue,1,60
+0,0,0,0,0,1,0,0,0,0,0,0,Community Chest,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Baltic Avenue,1,60
+0,0,0,0,0,0,0,0,0,1,0,0,Income Tax,0,200
+0,0,0,0,0,0,0,0,0,0,1,1,Reading Railroad,0,200
+0,0,0,0,0,0,0,0,0,0,0,0,Oriental Avenue,2,100
+0,0,0,0,1,0,0,0,0,0,0,0,Chance,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Vermont Avenue,2,100
+0,0,0,0,0,0,0,0,0,0,0,0,Connecticut Avenue,2,120
+0,1,0,0,0,0,0,0,0,0,0,0,Jail,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,St.Charles Place,3,140
+0,0,0,0,0,0,1,0,0,0,0,0,Electric Company,0,150
+0,0,0,0,0,0,0,0,0,0,0,0,States Avenue,3,140
+0,0,0,0,0,0,0,0,0,0,0,0,Virginia Avenue,3,160
+0,0,0,0,0,0,0,0,0,0,1,2,Pennsylvania Railroad,0,200
+0,0,0,0,0,0,0,0,0,0,0,0,St.James Place,4,180
+0,0,0,0,0,1,0,0,0,0,0,0,Community Chest,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Tennessee Avenue,4,180
+0,0,0,0,0,0,0,0,0,0,0,0,New York Avenue,4,200
+0,0,1,0,0,0,0,0,0,0,0,0,Parking,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Kentucky Avenue,5,220
+0,0,0,0,1,0,0,0,0,0,0,0,Chance,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Indiana Avenue,5,220
+0,0,0,0,0,0,0,0,0,0,0,0,Illinois Avenue,5,240
+0,0,0,0,0,0,0,0,0,0,1,3,B O Railroad,0,200
+0,0,0,0,0,0,0,0,0,0,0,0,Atlantic Avenue,6,260
+0,0,0,0,0,0,0,0,0,0,0,0,Ventnor Avenue,6,260
+0,0,0,0,0,0,0,1,0,0,0,0,Water Works,0,150
+0,0,0,0,0,0,0,0,0,0,0,0,Marvin Gardens,6,280
+0,0,0,1,0,0,0,0,0,0,0,0,Go To Jail,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Pacific Avenue,7,300
+0,0,0,0,0,0,0,0,0,0,0,0,North Carolina Avenue,7,300
+0,0,0,0,0,1,0,0,0,0,0,0,Community Chest,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Pennsylvania Avenue,7,320
+0,0,0,0,0,0,0,0,0,0,1,4,Short Line,0,200
+0,0,0,0,1,0,0,0,0,0,0,0,Chance,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,Park Palace,8,350
+0,0,0,0,0,0,0,0,1,0,0,0,Luxury Tax,0,100
+0,0,0,0,0,0,0,0,0,0,0,0,Boardwalk,8,400

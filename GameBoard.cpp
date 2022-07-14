@@ -3,3 +3,23 @@
 //
 
 #include "GameBoard.h"
+
+GameBoard::GameBoard() {
+
+}
+
+void GameBoard::generate() {
+    this->addField(GameFields());
+}
+
+GameFields GameBoard::getAfter(int number) {
+
+}
+
+int GameBoard::getFieldNumber() {
+
+}
+
+bool GameBoard::addField(GameFields toAdd) {
+
+}
