@@ -56,3 +56,7 @@ void GameBoard::outputComplexBoard() {
     cout << "END OF BOARD STATUS." << endl;
     cout << "=================================================================================" << endl << endl;
 }
+
+GameFields GameBoard::getStartField() {
+    return this->board.at(0);
+}

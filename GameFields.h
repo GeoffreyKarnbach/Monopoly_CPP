@@ -5,10 +5,13 @@
 #ifndef MONOPOLY_GAMEFIELDS_H
 #define MONOPOLY_GAMEFIELDS_H
 
+#pragma once
 #include <string>
 #include "Player.h"
 
 using namespace std;
+
+class Player;
 
 class GameFields {
 
@@ -72,7 +75,7 @@ private:
     string name;
     Color color;
     int price;
-    Player owner;
+    Player *owner;
 
     string boolToString(bool value);
 

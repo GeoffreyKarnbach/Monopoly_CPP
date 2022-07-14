@@ -57,7 +57,10 @@ public:
      */
     void outputComplexBoard();
 
-
+    /*
+     * Return Start Field
+     */
+    GameFields getStartField();
 
 };
 

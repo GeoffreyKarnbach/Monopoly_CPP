@@ -4,6 +4,7 @@
 
 #include "Player.h"
 #include <string>
+#include "GameFields.h"
 
 using namespace std;
 
@@ -41,5 +42,9 @@ bool Player::operator==(Player toCompare) {
 }
 
 string Player::toString() {
-    return "Player "+this->name+" currently has "+ to_string(this->money)+" euros";
+    return "Player "+this->name+" currently has "+ to_string(this->money)+" euros and being at field: "+this->position->toString();
+}
+
+bool Player::setField(GameFields field) {
+    this->position = &field;
 }

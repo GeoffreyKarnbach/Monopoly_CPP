@@ -1,6 +1,6 @@
 #include <iostream>
-#include "GameBoard.h"
 #include "Player.h"
+#include "GameBoard.h"
 #include "RingList.h"
 
 using namespace std;
@@ -47,6 +47,9 @@ void playerTurnTest()
 
 int main()
 {
+    GameBoard playBoard;
+    playBoard.generate();
+
     Player player1(1000, "Player1");
     Player player2(1000, "Player2");
     Player player3(1000,"Player3");
@@ -57,8 +60,10 @@ int main()
     players.addPlayer(player3);
     players.addPlayer(player4);
 
-    GameBoard playBoard;
-    playBoard.generate();
+    player1.setField(playBoard.getStartField());
+    player2.setField(playBoard.getStartField());
+    player3.setField(playBoard.getStartField());
+    player4.setField(playBoard.getStartField());
 
     if (DEBUG)
     {
@@ -69,6 +74,10 @@ int main()
         playBoard.outputBoard();
     }
 
+    cout << endl << player1.toString() << endl;
+    cout << player2.toString() << endl;
+    cout << player3.toString() << endl;
+    cout << player4.toString() << endl;
 
     return 0;
 }
