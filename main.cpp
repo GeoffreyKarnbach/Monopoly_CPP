@@ -57,8 +57,8 @@ int main()
 
     GameBoard playBoard;
     playBoard.generate();
+    playBoard.outputBoard();
 
-    playerTest();
     return 0;
 }
 

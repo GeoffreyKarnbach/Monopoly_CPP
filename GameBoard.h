@@ -47,6 +47,11 @@ public:
      */
     int getFieldNumber();
 
+    /*
+     * Method to output current state of Gameboard
+     */
+    void outputBoard();
+
 
 
 };

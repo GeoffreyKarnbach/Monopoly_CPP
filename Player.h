@@ -20,6 +20,11 @@ public:
     Player(int startMoney, string name);
 
     /*
+     * Default constructor for Player class
+     */
+    Player();
+
+    /*
      * Method to make payment from Player this to the Bank
      * If there is not enough money, the player loses
      */

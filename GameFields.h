@@ -60,8 +60,6 @@ private:
 public:
     GameFields(int price, string name);
 
-    GameFields();
-
     /*
      * Returns a string containing a readable form of the given GameField
      *

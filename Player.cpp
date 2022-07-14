@@ -12,6 +12,10 @@ Player::Player(int startMoney, string name) {
     this->name = name;
 }
 
+Player::Player() {
+
+}
+
 bool Player::takeMoney(int amount) {
     if (this->money >= amount)
     {
