@@ -105,7 +105,7 @@ public:
     /*
      * Handler to interact with the field - Returns false if the player has to be eliminated
      */
-    bool handler(Player current);
+    bool handler(Player& current);
 
     /*
      * Returns index of field

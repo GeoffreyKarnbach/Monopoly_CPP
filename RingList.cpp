@@ -9,7 +9,7 @@
 
 using namespace std;
 
-bool RingList::addPlayer(Player toAdd) {
+bool RingList::addPlayer(Player& toAdd) {
     this->playerList.push_back(toAdd);
     return true;
 }
@@ -23,7 +23,7 @@ RingList::RingList() {
     this->playerList.clear();
 }
 
-RingList::RingList(Player first) {
+RingList::RingList(Player& first) {
     RingList();
     this->addPlayer(first);
 }
@@ -45,7 +45,7 @@ int RingList::getIndex(Player toFind) {
     return -1;
 }
 
-bool RingList::removePlayer(Player toRemove) {
+bool RingList::removePlayer(Player& toRemove) {
     int position = this->getIndex(toRemove);
     if (position >= 0)
     {

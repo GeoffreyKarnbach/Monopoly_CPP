@@ -10,7 +10,7 @@
 
 class RingList {
 private:
-    vector<Player> playerList;
+    vector<Player&> playerList;
     int index = 0;
 
     /*
@@ -24,7 +24,7 @@ public:
     /*
      * Ability to parse a first player in constructor.
      */
-    RingList(Player first);
+    RingList(Player& first);
 
     //TODO: Add new constructor to add ability to pass entire Player List/Array/Vector
 
@@ -36,7 +36,7 @@ public:
     /*
      * Adds player to Ringlist. Returns true if there was no issue encountered.
      */
-    bool addPlayer(Player toAdd);
+    bool addPlayer(Player& toAdd);
 
     /*
      * Tries to remove given Player from Ring list (for instance once the player has been disqualified).
@@ -44,7 +44,7 @@ public:
      *
      * Also includes computation of index to ensure, that no players are skipped because of the removal of a player.
      */
-    bool removePlayer(Player toRemove);
+    bool removePlayer(Player& toRemove);
 
     /*
      * Returns next Player that should play. Ring list work around by using a vector and a currentIndex variable, that is used modulo the playerCount.

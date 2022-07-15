@@ -44,7 +44,7 @@ string GameFields::complexToString() {
     return toReturn;
 }
 
-bool GameFields::handler(Player current) {
+bool GameFields::handler(Player& current) {
     return false;
 }
 
