@@ -8,9 +8,7 @@
 
 using namespace std;
 
-GameBoard::GameBoard() {
-    //TODO
-}
+GameBoard::GameBoard() {}
 
 void GameBoard::generate() {
     for (int i = 1; i <= 40;i++)
@@ -21,7 +19,7 @@ void GameBoard::generate() {
 }
 
 GameFields GameBoard::getAfter(int startIndex, int steps) {
-    //TODO
+    return this->board.at((startIndex+steps)%this->getFieldNumber());
 }
 
 bool GameBoard::addField(GameFields toAdd) {

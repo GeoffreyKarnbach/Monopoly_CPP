@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "GameBoard.h"
 #include "RingList.h"
+#include "Utility.h"
 
 using namespace std;
 
@@ -45,8 +46,9 @@ void playerTurnTest()
     }
 }
 
-int main()
+void play()
 {
+    srand(time(0));
     GameBoard playBoard;
     playBoard.generate();
 
@@ -60,11 +62,6 @@ int main()
     players.addPlayer(player3);
     players.addPlayer(player4);
 
-    player1.setField(playBoard.getStartField());
-    player2.setField(playBoard.getStartField());
-    player3.setField(playBoard.getStartField());
-    player4.setField(playBoard.getStartField());
-
     if (DEBUG)
     {
         playBoard.outputComplexBoard();
@@ -74,10 +71,35 @@ int main()
         playBoard.outputBoard();
     }
 
-    cout << endl << player1.toString() << endl;
-    cout << player2.toString() << endl;
-    cout << player3.toString() << endl;
-    cout << player4.toString() << endl;
+    int turnNumber = 0;
 
+    while (players.playerNumber() > 0 && turnNumber < 100)
+    {
+        Player current = players.getNext();
+
+        int diceRoll = Utility::getRandom(6);
+        int startField = current.getField();
+
+        GameFields result = playBoard.getAfter(startField, diceRoll);
+        int resultField = result.getIndex();
+        current.setField(resultField); //TODO: Fix player position not updating in method (Probably due to absence of usage of pointers??)
+
+        if (resultField < startField)
+        {
+            current.addMoney(200);
+        }
+
+        if (result.handler(current))
+        {
+            players.removePlayer(current);
+        }
+
+        turnNumber++;
+    }
+}
+
+int main()
+{
+    play();
     return 0;
 }

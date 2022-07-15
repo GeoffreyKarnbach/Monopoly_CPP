@@ -76,6 +76,7 @@ private:
     Color color;
     int price;
     Player *owner;
+    int index;
 
     string boolToString(bool value);
 
@@ -102,9 +103,14 @@ public:
     string complexToString();
 
     /*
-     * Handler to interact with the field
+     * Handler to interact with the field - Returns false if the player has to be eliminated
      */
-    void handler(Player current);
+    bool handler(Player current);
+
+    /*
+     * Returns index of field
+     */
+    int getIndex();
 
 };
 

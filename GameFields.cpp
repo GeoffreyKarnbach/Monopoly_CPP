@@ -44,11 +44,16 @@ string GameFields::complexToString() {
     return toReturn;
 }
 
-void GameFields::handler(Player current) {
-    //TODO
+bool GameFields::handler(Player current) {
+    return false;
+}
+
+int GameFields::getIndex() {
+    return this->index;
 }
 
 GameFields::GameFields(int index) {
+    this->index = index-1;
 
     //Phase 1: Find corresponding line in given CSV file
     ifstream myFile("../Fields.csv");

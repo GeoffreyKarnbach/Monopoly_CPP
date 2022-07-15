@@ -11,14 +11,13 @@
 #include <vector>
 
 /*
- * Implement GameBoard as Ringlist with methode to "jump" given amount of squares
+ * Implement GameBoard as vector with all GameFields.
  * In constructor create all the cases, to reduce amount of code in main.cpp to a single GameBoard Objects
  *
  */
 
 class GameBoard {
 private:
-    int index = 0;
     vector<GameFields> board;
 
 public:

@@ -8,6 +8,7 @@
 #pragma once
 #include <string>
 #include "GameFields.h"
+#include <vector>
 
 using namespace std;
 
@@ -18,7 +19,15 @@ class Player {
     private:
         int money;
         string name;
-        GameFields *position;
+        int position;
+
+        /*
+         * Saves the amount of houses for each of the 40 Gamefields
+         * Houses = 1->4 ; Hotel = 5
+         */
+        vector<int> houses;
+
+        vector<bool> owned; //Saves if the player owns the Gamefield at index n
 
     public:
         /*
@@ -44,6 +53,11 @@ class Player {
         bool takeMoney(int amount, Player to);
 
         /*
+         * Method to add money to player
+         */
+        bool addMoney(int amount);
+
+        /*
          * Two Player objects are considered equal if their names are identical.
          * Implementation of == operator.
          */
@@ -58,7 +72,12 @@ class Player {
         /*
          * Set current Gamefield for specific player
          */
-        bool setField(GameFields field);
+        bool setField(int index);
+
+        /*
+         * Return current PlayerPosition
+         */
+        int getField();
 };
 
 

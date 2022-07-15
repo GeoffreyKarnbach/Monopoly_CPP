@@ -5,16 +5,30 @@
 #include "Player.h"
 #include <string>
 #include "GameFields.h"
+#include <iostream>
 
 using namespace std;
 
 Player::Player(int startMoney, string name) {
     this->money = startMoney;
     this->name = name;
+    this->position = 0;
+
+    for (int i = 0; i < 40; i++)
+    {
+        this->houses.push_back(0);
+        this->owned.push_back(false);
+    }
+
+    cout << this->houses.size() << endl;
+
 }
 
-Player::Player() {
+Player::Player() {}
 
+bool Player::addMoney(int amount) {
+    this->money += amount;
+    return true;
 }
 
 bool Player::takeMoney(int amount) {
@@ -42,9 +56,14 @@ bool Player::operator==(Player toCompare) {
 }
 
 string Player::toString() {
-    return "Player "+this->name+" currently has "+ to_string(this->money)+" euros and being at field: "+this->position->toString();
+    return "Player "+this->name+" currently has "+ to_string(this->money)+" euros and being at field with index "+to_string(this->position);
 }
 
-bool Player::setField(GameFields field) {
-    this->position = &field;
+bool Player::setField(int index) {
+    this->position = index;
+    return true;
+}
+
+int Player::getField() {
+    return this->position;
 }
