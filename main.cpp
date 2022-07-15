@@ -10,7 +10,7 @@ const bool DEBUG = true;
 
 void playerTurnTest()
 {
-    srand(2022); //Start Random Engine
+    srand(time(0)); //Start Random Engine
 
     Player player1(1000, "Player1");
     Player player2(1000, "Player2");
@@ -27,7 +27,7 @@ void playerTurnTest()
 
     while (players.playerNumber() > 0 && currentTurn < 100)
     {
-        Player current = players.getNext();
+        Player& current = players.getNext();
         cout << "(TURN "+ to_string(currentTurn)+") Current player is: " << current.toString() << endl;
 
         int odd = rand()%10+1;
@@ -75,15 +75,13 @@ void play()
 
     while (players.playerNumber() > 0 && turnNumber < 100)
     {
-        Player current = players.getNext();
+        Player& current = players.getNext();
 
         int diceRoll = Utility::getRandom(6);
         int startField = current.getField();
 
         GameFields result = playBoard.getAfter(startField, diceRoll);
         int resultField = result.getIndex();
-
-        cout << startField << " " << diceRoll << " " << resultField << endl;
 
         current.setField(resultField); //TODO: Fix player position not updating in method (Probably due to absence of usage of pointers??)
 
