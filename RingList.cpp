@@ -37,7 +37,7 @@ Player& RingList::getNext() {
 int RingList::getIndex(Player& toFind) {
     for (int i = 0; i < this->playerList.size(); i++)
     {
-        if (toFind == *(this->playerList.at(i)))
+        if (&toFind == this->playerList.at(i))
         {
             return i;
         }
