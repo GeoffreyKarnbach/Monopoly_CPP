@@ -10,14 +10,14 @@
 
 class RingList {
 private:
-    vector<Player&> playerList;
+    vector<Player*> playerList;
     int index = 0;
 
     /*
      * Helper method to get Index of a given Player. Outputs either the value in interval [0, vector.size()] or if
      * not found the value -1.
      */
-    int getIndex(Player toFind);
+    int getIndex(Player& toFind);
 
 public:
 
@@ -49,7 +49,7 @@ public:
     /*
      * Returns next Player that should play. Ring list work around by using a vector and a currentIndex variable, that is used modulo the playerCount.
      */
-    Player getNext();
+    Player& getNext();
 
     /*
      * Returns amount of active players in match.

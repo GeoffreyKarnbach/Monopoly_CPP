@@ -10,7 +10,7 @@
 using namespace std;
 
 bool RingList::addPlayer(Player& toAdd) {
-    this->playerList.push_back(toAdd);
+    this->playerList.push_back(&toAdd);
     return true;
 }
 
@@ -28,16 +28,16 @@ RingList::RingList(Player& first) {
     this->addPlayer(first);
 }
 
-Player RingList::getNext() {
-    Player toReturn = this->playerList.at(index%this->playerList.size());
+Player& RingList::getNext() {
+    Player& toReturn = *(this->playerList.at(index%this->playerList.size()));
     index++;
     return toReturn;
 }
 
-int RingList::getIndex(Player toFind) {
+int RingList::getIndex(Player& toFind) {
     for (int i = 0; i < this->playerList.size(); i++)
     {
-        if (toFind == this->playerList.at(i))
+        if (toFind == *(this->playerList.at(i)))
         {
             return i;
         }

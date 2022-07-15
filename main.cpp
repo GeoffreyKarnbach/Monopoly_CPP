@@ -82,6 +82,9 @@ void play()
 
         GameFields result = playBoard.getAfter(startField, diceRoll);
         int resultField = result.getIndex();
+
+        cout << startField << " " << diceRoll << " " << resultField << endl;
+
         current.setField(resultField); //TODO: Fix player position not updating in method (Probably due to absence of usage of pointers??)
 
         if (resultField < startField)
