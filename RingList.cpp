@@ -28,7 +28,9 @@ RingList::RingList(Player& first) {
     this->addPlayer(first);
 }
 
-Player& RingList::getNext() {
+Player& RingList::getNext() { //TODO: FIX
+    cout << index%this->playerList.size() << endl;
+    this->outputState();
     Player& toReturn = *(this->playerList.at(index%this->playerList.size()));
     index++;
     return toReturn;
@@ -57,4 +59,11 @@ bool RingList::removePlayer(Player& toRemove) {
         return true;
     }
     return false;
+}
+
+void RingList::outputState() {
+    for (int i = 0; i < this->playerNumber();i++)
+    {
+        cout << this->playerList[i]->toString() << endl;
+    }
 }

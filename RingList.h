@@ -55,6 +55,11 @@ public:
      * Returns amount of active players in match.
      */
     int playerNumber();
+
+    /*
+     * Method to display all the elements of the ringlist
+     */
+    void outputState();
 };
 
 

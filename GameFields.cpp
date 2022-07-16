@@ -14,6 +14,7 @@ using namespace std;
 GameFields::GameFields() {
     this->name = "Default";
     this->price = -1;
+    this->owner = nullptr;
 }
 
 string GameFields::boolToString(bool value) {
@@ -40,7 +41,18 @@ string GameFields::complexToString() {
                         "\n\tField Name: "+this->name+
                         "\n\tField color: "+this->Colors[this->color]+
                         "\n\tPrice: "+ to_string(this->price)+
-                        "\n}";
+                        "\n\tID: "+ to_string(this->index);
+
+    if (this->owner != nullptr) //Check if owner is displayable
+    {
+        toReturn += "\n\tOwner: "+this->owner->toString()+
+                    "\n}";
+    }
+    else
+    {
+        toReturn += "\n\tOwner: NONE \n}";
+    }
+
     return toReturn;
 }
 
@@ -129,4 +141,5 @@ GameFields::GameFields(int index) {
     this->name = splitted.at(12);
     this->color = Color(stoi(splitted.at(13)));
     this->price = stoi(splitted.at(14));
+    this->owner = nullptr;
 }
