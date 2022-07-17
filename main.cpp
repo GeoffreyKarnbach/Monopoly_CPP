@@ -78,7 +78,6 @@ void play()
 
     while (players.playerNumber() > 0 && turnNumber < 1000)
     {
-
         if (repeated == 3) //If the player has diced three times in a row two identical diced, the player goes to jail
         {
             cout << "Player goes to jail" << endl;
@@ -93,7 +92,23 @@ void play()
             cout << endl;
             current = &(players.getNext());
 
-            //TODO: Check if player is in Jail -> Potentially skip turn
+            if (current->jailLength() != 0)
+            {
+                if (current->jailLength() == 3)
+                {
+                    current->leaveJail();
+                    cout << current->toString() << endl << "HAS LEFT JAIL." << endl;
+                    int x;
+                    cin >> x;
+                }
+                else
+                {
+                    //TODO: Implement more jail features as paying or having an out of jail card
+                    cout << current->toString() << " is still in jail since " << current->jailLength() << " turns." << endl;
+                    current->stayInJail();
+                    continue;
+                }
+            }
         }
 
         int diceRoll1 = Utility::getRandom(6);
@@ -113,7 +128,7 @@ void play()
             current->addMoney(200);
         }
 
-        if (result.handler(*current)) //TODO: Write Handler to take into account every event
+        if (result.handler(*current))
         {
             players.removePlayer(*current);
         }

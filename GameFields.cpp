@@ -57,6 +57,7 @@ string GameFields::complexToString() {
 }
 
 bool GameFields::handler(Player& current) {
+    //TODO: Program game Handler with I/O or with automatically response depending on paradigm chosen
     return false;
 }
 

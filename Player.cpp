@@ -14,6 +14,7 @@ Player::Player(int startMoney, string name) {
     this->name = name;
     this->position = 0;
     this->inJail = false;
+    this->jailDuration = 0;
 
     for (int i = 0; i < 40; i++)
     {
@@ -72,4 +73,18 @@ int Player::getField() {
 void Player::goToJail() {
     this->setField(JAIL_ID);
     this->inJail = true;
+    this->jailDuration = 1;
+}
+
+int Player::jailLength() {
+    return this->jailDuration;
+}
+
+void Player::stayInJail() {
+    this->jailDuration++;
+}
+
+void Player::leaveJail() {
+    this->inJail = false;
+    this->jailDuration = 0;
 }

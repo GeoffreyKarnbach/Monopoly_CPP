@@ -21,7 +21,8 @@ class Player {
         string name;
         int position;
         const int JAIL_ID = 10;
-        bool inJail;
+        bool inJail = false;
+        int jailDuration = 0;
 
         /*
          * Saves the amount of houses for each of the 40 Gamefields
@@ -85,6 +86,22 @@ class Player {
          * Method to send player to jail
          */
         void goToJail();
+
+        /*
+         * Returns number of rounds that player is already in jail, player automatically freed after 3 rounds
+         * 0 means the player isn't in jail.
+         */
+        int jailLength();
+
+        /*
+         * Increase length in jail by 1
+         */
+        void stayInJail();
+
+        /*
+         * Method to make player leave from jail
+         */
+        void leaveJail();
 };
 
 
