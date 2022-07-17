@@ -6,8 +6,8 @@
 
 using namespace std;
 
-const bool DEBUG = true;
-const int JAIL_ID = 10;
+const bool DEBUG = false;
+
 
 void playerTurnTest()
 {
@@ -47,6 +47,8 @@ void playerTurnTest()
     }
 }
 
+//TODO: Create CSV File with all Luck and Community cards available
+
 void play()
 {
     srand(time(0));
@@ -65,11 +67,7 @@ void play()
 
     if (DEBUG)
     {
-        //playBoard.outputComplexBoard();
-    }
-    else
-    {
-        playBoard.outputBoard();
+        playBoard.outputComplexBoard();
     }
 
     int turnNumber = 0;
@@ -84,21 +82,18 @@ void play()
         if (repeated == 3) //If the player has diced three times in a row two identical diced, the player goes to jail
         {
             cout << "Player goes to jail" << endl;
+            current->goToJail();
             repeated = 0;
             replay = false;
-
-            current->setField(JAIL_ID); // Sets the player to jail field //TODO:Implement special handling if current player is in jail (Maybe skip)
-
-            int x; //TODO: Remove, temporary marker to show if player goes to jail (DEBUG)
-            cin >> x;
-
             continue;
         }
 
-        if (!replay)
+        if (!replay) //If there is a new turn where the last player didn't roll identical dices, set the current player to the next in the ringlist
         {
             cout << endl;
             current = &(players.getNext());
+
+            //TODO: Check if player is in Jail -> Potentially skip turn
         }
 
         int diceRoll1 = Utility::getRandom(6);
@@ -118,7 +113,7 @@ void play()
             current->addMoney(200);
         }
 
-        if (result.handler(*current))
+        if (result.handler(*current)) //TODO: Write Handler to take into account every event
         {
             players.removePlayer(*current);
         }
@@ -137,11 +132,6 @@ void play()
         }
 
         turnNumber++;
-
-        if (replay) //If there is a new turn where the last player didn't roll identical dices, set the current player to the next in the ringlist
-        {
-            continue;
-        }
     }
 }
 

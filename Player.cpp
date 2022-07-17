@@ -13,6 +13,7 @@ Player::Player(int startMoney, string name) {
     this->money = startMoney;
     this->name = name;
     this->position = 0;
+    this->inJail = false;
 
     for (int i = 0; i < 40; i++)
     {
@@ -66,4 +67,9 @@ bool Player::setField(int index) {
 
 int Player::getField() {
     return this->position;
+}
+
+void Player::goToJail() {
+    this->setField(JAIL_ID);
+    this->inJail = true;
 }

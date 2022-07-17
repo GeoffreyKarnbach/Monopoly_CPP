@@ -20,6 +20,8 @@ class Player {
         int money;
         string name;
         int position;
+        const int JAIL_ID = 10;
+        bool inJail;
 
         /*
          * Saves the amount of houses for each of the 40 Gamefields
@@ -78,6 +80,11 @@ class Player {
          * Return current PlayerPosition
          */
         int getField();
+
+        /*
+         * Method to send player to jail
+         */
+        void goToJail();
 };
 
 
