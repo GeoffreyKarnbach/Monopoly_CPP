@@ -1,0 +1,13 @@
+money,moveToCaseID,justVisitField,outOfJailCard,moveNFields,goToJail,repairHouses,checkStart,CardText
+0,39,1,0,0,0,0,0,Advance to Boardwalk
+200,0,1,0,0,0,0,0,Advance to Go (Collect 200)
+0,24,1,0,0,0,0,1,Advance to Illinois Avenue. If you pass Go -> collect 200
+0,11,1,0,0,0,0,1,Advance to St.Charles Place. If you pass Go -> collect 200
+50,0,1,0,0,0,0,0,Bank pays you dividend of 50
+0,0,1,1,0,0,0,0,Get Out of Jail for Free
+0,0,0,0,-3,0,0,0,Go Back 3 Spaces
+0,0,0,0,0,1,0,0,Go To Jail. Go directly do not pass Go do not collect 200
+0,0,0,0,0,0,1,0,Make General repairs on all your property. For each house 25. For each hotel 100
+-15,0,0,0,0,0,0,0,Speeding Fine 15
+0,5,1,0,0,0,0,1,Take a trip to Reading Railroad. If you pass Go -> collect 200
+150,0,0,0,0,0,0,0,Your building loan matures. Collect 150

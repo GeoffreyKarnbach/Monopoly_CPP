@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const bool DEBUG = false;
+const bool DEBUG = true;
 
 
 void playerTurnTest()
@@ -47,7 +47,8 @@ void playerTurnTest()
     }
 }
 
-//TODO: Create CSV File with all Luck and Community cards available
+//TODO: Create CSV File with Community cards available
+//      Create new class for Luck Cards, that reads the data from the file: "Luck.csv"
 
 void play()
 {
