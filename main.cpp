@@ -65,7 +65,7 @@ void play()
 
     if (DEBUG)
     {
-        playBoard.outputComplexBoard();
+        //playBoard.outputComplexBoard();
     }
     else
     {
@@ -76,8 +76,8 @@ void play()
     bool replay = false;
     int repeated = 0;
 
-    Player temp(1000,"TEMP");
-    Player& current =  temp;
+    Player* current =  &(players.getNext());
+
     while (players.playerNumber() > 0 && turnNumber < 1000)
     {
 
@@ -87,7 +87,7 @@ void play()
             repeated = 0;
             replay = false;
 
-            //current.setField(JAIL_ID); // Sets the player to jail field //TODO:Implement special handling if current player is in jail (Maybe skip)
+            current->setField(JAIL_ID); // Sets the player to jail field //TODO:Implement special handling if current player is in jail (Maybe skip)
 
             int x; //TODO: Remove, temporary marker to show if player goes to jail (DEBUG)
             cin >> x;
@@ -95,38 +95,35 @@ void play()
             continue;
         }
 
-        if (!replay) //If there is a new turn where the last player didn't roll identical dices, set the current player to the next in the ringlist
+        if (!replay)
         {
             cout << endl;
-            Player& current = players.getNext();
-            cout << current.toString() << endl;
+            current = &(players.getNext());
         }
-        cout << current.toString() << endl;
-
 
         int diceRoll1 = Utility::getRandom(6);
         int diceRoll2 = Utility::getRandom(6);
 
         int diceRoll = diceRoll1 + diceRoll2;
 
-        int startField = current.getField();
+        int startField = current->getField();
 
         GameFields result = playBoard.getAfter(startField, diceRoll); //Compute new field where player arrives depending on
         int resultField = result.getIndex();
 
-        current.setField(resultField);
+        current->setField(resultField);
 
         if (resultField < startField) //Take into account if player crosses the start field to receive +200
         {
-            current.addMoney(200);
+            current->addMoney(200);
         }
 
-        if (result.handler(current))
+        if (result.handler(*current))
         {
-            players.removePlayer(current);
+            players.removePlayer(*current);
         }
 
-        cout << current.toString() << " after rolling a " << diceRoll << " (" << diceRoll1 << " + " << diceRoll2 << ")." << endl;
+        cout << current->toString() << " after rolling a " << diceRoll << " (" << diceRoll1 << " + " << diceRoll2 << ")." << endl;
 
         if (diceRoll1 == diceRoll2)
         {
@@ -140,6 +137,11 @@ void play()
         }
 
         turnNumber++;
+
+        if (replay) //If there is a new turn where the last player didn't roll identical dices, set the current player to the next in the ringlist
+        {
+            continue;
+        }
     }
 }
 

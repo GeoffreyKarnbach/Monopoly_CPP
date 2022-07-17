@@ -28,9 +28,7 @@ RingList::RingList(Player& first) {
     this->addPlayer(first);
 }
 
-Player& RingList::getNext() { //TODO: FIX
-    cout << index%this->playerList.size() << endl;
-    this->outputState();
+Player& RingList::getNext() {
     Player& toReturn = *(this->playerList.at(index%this->playerList.size()));
     index++;
     return toReturn;
