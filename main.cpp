@@ -72,7 +72,7 @@ void play()
     }
 
     int turnNumber = 0;
-    bool replay = false;
+    bool replay = true;
     int repeated = 0;
 
     Player* current =  &(players.getNext());
